@@ -167,9 +167,9 @@ export const Introduction: React.FC<IntroProps> = ({ onComplete }) => {
               
               <div className="space-y-6">
                 {glossaryTerms.map((item) => (
-                  <div key={item.term}>
+                  <div key={item.term} className="text-3xl">
                     <h3 className="font-bold text-blue-500 mb-1">{item.term}</h3>
-                    <p className={`text-sm leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+                    <p className={`text-lg leading-relaxed ${isDark ? "text-slate-300" : "text-slate-600"}`}>
                       {item.definition}
                     </p>
                   </div>
