@@ -12,7 +12,6 @@ interface BlockDetailModalProps {
 }
 
 export const BlockDetailModal: React.FC<BlockDetailModalProps> = ({ block, ownerId, blockIndex, onClose }) => {
-  // FIXED: Removed the invalid 'Qs' variable
   const { nodes, tamperBlock } = useSimulation(); 
   
   const [editingTxId, setEditingTxId] = useState<string | null>(null);

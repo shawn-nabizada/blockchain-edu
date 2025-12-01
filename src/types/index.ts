@@ -13,7 +13,7 @@ export interface IBlock {
   previousHash: string;
   hash: string;
   nonce: number;
-  miner: string; // <--- New Field
+  miner: string;
 }
 
 export interface IQuestion {

@@ -44,8 +44,6 @@ const SimulationContext = createContext<SimulationContextType | undefined>(undef
 export const SimulationProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [nodes, setNodes] = useState<NodeState[]>([]);
   const [logs, setLogs] = useState<LogEntry[]>([]);
-  
-  // New State Variables
   const [difficulty, setDifficulty] = useState(2);
   const [propagationEvents, setPropagationEvents] = useState<PropagationEvent[]>([]);
 
@@ -82,8 +80,6 @@ export const SimulationProvider: React.FC<{ children: ReactNode }> = ({ children
 
   const addTransaction = (from: string, to: string, amount: number): boolean => {
     const sender = nodes.find(n => n.id === from);
-    // Simple check: Balance + Pending Transactions not yet mined? 
-    // For simplicity in this demo, we check confirmed balance. 
     if (!sender || sender.balance < amount) {
       addLog(`Transaction failed: ${sender?.name} has insufficient funds.`, "error");
       return false;
@@ -135,13 +131,6 @@ export const SimulationProvider: React.FC<{ children: ReactNode }> = ({ children
     }
 
     const newBlockLogic = new Block(Date.now(), txsToMine, lastBlock.hash, minerNode.name);
-    
-    // Simulate Mining Speed:
-    // Real mining is CPU bound. We will simulate "speed" by delaying the start 
-    // or adding a fake delay if the CPU is too fast. 
-    // For this educational tool, we let the CPU do the work (mineBlock) but we use
-    // the difficulty to control the "actual" time.
-    
     await newBlockLogic.mineBlock(difficulty); 
     const validBlock = { ...newBlockLogic }; 
 

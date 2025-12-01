@@ -34,17 +34,15 @@ export const ChainView: React.FC<ChainViewProps> = ({ blocks, ownerId, title = "
         let isLinkValid = true;
         if (i > 0) {
           const previousRealHash = realHashes[i - 1];
-          // Does my "previousHash" field match the ACTUAL hash of the block before me?
           isLinkValid = block.previousHash === previousRealHash;
         } else {
-          // Genesis block must have "0" as previous
           isLinkValid = block.previousHash === "0";
         }
 
         if (!isDataValid) {
-          statuses.push("tampered"); // I am the source of the lie
+          statuses.push("tampered");
         } else if (!isLinkValid) {
-          statuses.push("broken-link"); // I am honest, but my history is broken
+          statuses.push("broken-link");
         } else {
           statuses.push("valid");
         }

@@ -49,7 +49,6 @@ export const LessonSlide: React.FC<LessonSlideProps> = ({ slide, onNext, isLast 
   };
 
   return (
-    // Removed 'max-w-2xl mx-auto' to allow full width in the left panel
     <div className="w-full relative z-10">
       <AnimatePresence mode="wait">
         <motion.div
@@ -58,8 +57,6 @@ export const LessonSlide: React.FC<LessonSlideProps> = ({ slide, onNext, isLast 
           initial="hidden"
           animate="visible"
           exit="exit"
-          // Removed rounded corners on left/right for a more 'pane' feel, or keep them. 
-          // Let's keep the card look but cleaner.
           className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden"
         >
           {/* Header */}

@@ -43,7 +43,7 @@ export const MempoolView: React.FC<MempoolViewProps> = ({ transactions }) => {
                 {/* Minimal Layout: A -> B */}
                 <div className="flex items-center gap-2">
                   <span 
-                    title={getName(tx.fromAddress)} // Full name on hover
+                    title={getName(tx.fromAddress)}
                     className="font-bold bg-blue-100 text-blue-700 w-6 h-6 flex items-center justify-center rounded-full border border-blue-200"
                   >
                     {getName(tx.fromAddress).charAt(0)}
@@ -52,7 +52,7 @@ export const MempoolView: React.FC<MempoolViewProps> = ({ transactions }) => {
                   <ArrowRight className="w-3 h-3 text-slate-400" />
                   
                   <span 
-                    title={getName(tx.toAddress)} // Full name on hover
+                    title={getName(tx.toAddress)}
                     className="font-bold bg-green-100 text-green-700 w-6 h-6 flex items-center justify-center rounded-full border border-green-200"
                   >
                     {getName(tx.toAddress).charAt(0)}

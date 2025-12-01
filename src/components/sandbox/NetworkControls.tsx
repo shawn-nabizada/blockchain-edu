@@ -5,13 +5,10 @@ import { NetworkLog } from "./NetworkLog";
 
 export const NetworkControls: React.FC = () => {
   const { addTransaction, nodes, logs, difficulty, setDifficulty } = useSimulation(); 
-  
-  // Initialize state lazily if nodes exist, otherwise empty
   const [from, setFrom] = useState(nodes.length > 0 ? nodes[0].id : "");
   const [to, setTo] = useState(nodes.length > 1 ? nodes[1].id : "");
   const [amount, setAmount] = useState(10);
 
-  // Sync state when nodes populate (if they were empty on mount)
   useEffect(() => {
     if (nodes.length > 0) {
       if (!from) setFrom(nodes[0].id);

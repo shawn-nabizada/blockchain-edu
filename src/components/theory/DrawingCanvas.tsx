@@ -64,8 +64,6 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({ isDark, savedData,
     const canvas = canvasRef.current;
     if (!canvas || !savedData) return;
     
-    // Optimization: Don't redraw if the data matches what we just saved locally
-    // This prevents the "flash" on every stroke
     if (savedData === lastSavedRef.current) return;
 
     const ctx = canvas.getContext("2d");
@@ -110,7 +108,7 @@ export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({ isDark, savedData,
     setIsDrawing(false);
     if (canvasRef.current) {
       const data = canvasRef.current.toDataURL();
-      lastSavedRef.current = data; // Update local ref to avoid re-drawing our own data
+      lastSavedRef.current = data;
       onSave(data);
     }
   };

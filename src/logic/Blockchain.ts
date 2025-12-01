@@ -8,16 +8,13 @@ export class Blockchain {
   public miningReward: number;
 
   constructor() {
-    this.chain = []; // We will initialize Genesis block explicitly later if needed, or in the constructor
-    this.difficulty = 2; // Keep it low for the simulation so it's fast
+    this.chain = [];
+    this.difficulty = 2;
     this.pendingTransactions = [];
     this.miningReward = 10;
-    
-    // Create Genesis block immediately
     this.createGenesisBlock();
   }
 
-  // The first block cannot point to a previous one, so we manually create it
   private async createGenesisBlock() {
     const genesisBlock = new Block(Date.now(), [], "0");
     await genesisBlock.mineBlock(this.difficulty);

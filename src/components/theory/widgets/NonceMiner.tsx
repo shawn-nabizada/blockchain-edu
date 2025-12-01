@@ -8,7 +8,7 @@ export const NonceMiner: React.FC = () => {
   const [isSolved, setIsSolved] = useState(false);
   
   // Target: Hash must start with "0" (Easy difficulty for demo)
-  // Real Bitcoin requires ~19 zeros!
+  // Real Bitcoin requires ~19 zeros
   const TARGET_PREFIX = "00"; 
 
   useEffect(() => {

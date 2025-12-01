@@ -4,7 +4,6 @@ import { MempoolView } from "./MempoolView";
 import type { ITransaction, IBlock } from "../../types";
 import { Wallet, Server, Pickaxe, Loader2, Gauge, Wifi } from "lucide-react";
 import { useSimulation } from "../../context/SimulationContext";
-// Removed unused 'motion' and 'AnimatePresence' imports
 
 interface NodeViewProps {
   id: string;
