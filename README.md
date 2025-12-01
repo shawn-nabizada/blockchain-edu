@@ -1,73 +1,68 @@
-# React + TypeScript + Vite
+# 🔗 Blockchain Edu Simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, educational web application designed to demystify blockchain technology. This tool takes users from zero knowledge to a deep, practical understanding through interactive theory, a fully functional network sandbox, and critical thinking scenarios.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Interactive Theory Stage
+* **Visual Learning:** Guided slides explaining Hashing, Proof of Work, and Distributed Trust.
+* **Interactive Widgets:** Real-time SHA-256 hash calculators, Nonce mining mini-games, and gossip protocol visualizations.
+* **Whiteboard Mode:** A persistent drawing canvas alongside slides for diagramming concepts.
+* **Progressive Complexity:** Concepts are broken down into digestible steps.
 
-## React Compiler
+### 2. "God Mode" Sandbox
+* **Full Network Control:** Orchestrate a 4-node network (Alice, Bob, Clayton, Dave).
+* **Live Mining:** Adjust mining difficulty and individual node speed to see how hashrate affects the network.
+* **Propagation Visuals:** Watch blocks and transactions fly across the network in real-time.
+* **Tamper & Hack:** Intentionally edit a block's history to break the hash chain and watch the network reject the invalid chain (The "Domino Effect").
+* **Consensus Simulation:** Experience the "Longest Chain Rule" firsthand.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. Critical Thinking Wrap-Up
+* **Reality Checks:** Compare the simulation to real-world networks like Bitcoin and Ethereum.
+* **CEO Simulator:** A text-based scenario testing your ability to choose between a Database and a Blockchain for business use cases.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Framework:** React 19 + TypeScript
+* **Build Tool:** Vite
+* **Styling:** Tailwind CSS
+* **Animations:** Framer Motion
+* **Icons:** Lucide React
+* **State Management:** React Context API (Simulation Engine)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
+* Node.js (v18 or higher)
+* npm or yarn
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Installation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/shawn-nabizada/blockchain-edu.git](https://github.com/shawn-nabizada/blockchain-edu.git)
+    cd blockchain-edu
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2.  **Install dependencies**
+    ```bash
+    npm install
+    ```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3.  **Run the development server**
+    ```bash
+    npm run dev
+    ```
+
+4.  Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## 🧪 How to use the Sandbox
+
+1.  **Send Money:** Use the Sidebar control panel to broadcast transactions between nodes.
+2.  **Mine a Block:** Click "Mine" on any node. Watch the block propagate to peers.
+3.  **Break the Chain:** Click on a mined block, edit a transaction amount, and save. The block will turn RED.
+4.  **Watch Rejection:** Try to mine on top of that red block. The network will reject your invalid history.
+
+## 📄 License
+
+This project is open source and available under the MIT License.
