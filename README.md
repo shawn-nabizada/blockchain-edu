@@ -2,6 +2,8 @@
 
 An interactive, educational web application designed to demystify blockchain technology. This tool takes users from zero knowledge to a deep, practical understanding through interactive theory, a fully functional network sandbox, and critical thinking scenarios.
 
+[Currently deployed on Vercel](https://blockchain-edu-git-main-shawn-nabizadas-projects.vercel.app/)
+
 ## ✨ Features
 
 ### 1. Interactive Theory Stage
